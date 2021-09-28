@@ -5,7 +5,8 @@ A simple script for managing attached policies to AWS IAM entitites, written in 
 * boto3
 * python 3.6 or higher
 
-All dependencies can be installed by any package manager like pip, anaconda, virtualenv, etc.
+All dependencies can be installed from the **requirements.txt** by any package manager like pip, anaconda, virtualenv, etc. Enviroment configuration should be made according your package manager or preference.
+
 
 ### Right before running this script
 Before making use of this script, make sure you have your AWS credentials defined on your system, either by [IAM console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) or having the AWS CLI installed and going to `aws configure`, more info on this can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
@@ -17,7 +18,7 @@ aws_secret_access_key = YOUR_SECRET_KEY
 ```
 
 ---
-
+From the terminal, do `python policy_upgrade.py` or `python3 policy_upgrade`
 The script will start by asking you to provide a policy arn, not the friendly name of it but the amazon resource name.
 
 `Ex: arn:aws:iam::aws:policy/AmazonEC2FullAccess`
@@ -31,7 +32,7 @@ Enter a number to choose:
  3.Replace a policy
 ```
 
-* **Option 1** will only list and display all existing roles, groups and users from the AWS linked account, if the policy has no entities, it will return empty.
+* **Option 1** will only list and display all existing roles, groups and users from the AWS linked account, if the policy has no entities, it will return a message of no resources found .
   
 ```
 Resources with "arn:aws:iam::aws:policy/examplePolicy" attached:
