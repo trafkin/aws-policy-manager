@@ -15,6 +15,12 @@ class bcolors:
     UNDERLINE = '\033[4m'
     WHITE        = "\033[97m"
 
+def list_if_empty(list:List):
+    if len(list) == 0:
+        return 0
+    else:
+        return 1
+
 def get_entities(p_arn, entity_name) -> List[str]:
     """Using the boto3 module calling the AWS API, this function retrieves the json response and iterates between pages and their dicts
     returning only the value defined accordingly (users, groups, roles)"""
@@ -36,6 +42,22 @@ def initial_response(p_arn,users,roles,groups):
         groups=groups
     )
     print(message)
+
+def param_validation_arn(message:str):
+    """For validating user provided arn"""
+    StatusCode = 0
+    while StatusCode != 200:
+        try: 
+            arn = input(message)
+            response = Client.list_policy_versions(
+                PolicyArn=arn
+            )
+            StatusCode = response['ResponseMetadata'].get('HTTPStatusCode')
+        except Exception:
+            print(f'{bcolors.WARNING}{bcolors.BOLD}====ERROR!====\n {bcolors.WHITE}{bcolors.ENDC}The arn you provided is invalid!')
+            continue
+        break
+    return arn
 
 def detach_policy_per_entity(p_arn,users,roles,groups):
     """Using the boto3 module calling the AWS API, all entities listed by the get_entitites function will be detached 
