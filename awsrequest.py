@@ -70,5 +70,3 @@ def attach_policy_per_entity(new_p_arn,users,roles,groups):
         print(f'{bcolors.OKBLUE} Done, all entities have the policy attached.')
     else:
         print('Something went wrong')
-
-

@@ -8,7 +8,7 @@ A simple script for managing attached policies to AWS IAM entitites, written in 
 All dependencies can be installed by any package manager like pip, anaconda, virtualenv, etc.
 
 ### Right before running this script
-Before making use of this script, make sure you have your AWS credentials defined on your system, either by [IAM console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) or having the AWS CLI installed and going to `aws configure`, more info on this can be found [here](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#configuration)
+Before making use of this script, make sure you have your AWS credentials defined on your system, either by [IAM console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey) or having the AWS CLI installed and going to `aws configure`, more info on this can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html)
 
 ```
 [default]
