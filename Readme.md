@@ -18,7 +18,7 @@ aws_secret_access_key = YOUR_SECRET_KEY
 ```
 
 ---
-From the terminal, do `python policy_upgrade.py` or `python3 policy_upgrade`
+From the terminal, do `python policy_upgrade.py` or `python3 policy_upgrade.py`
 The script will start by asking you to provide a policy arn, not the friendly name of it but the amazon resource name.
 
 `Ex: arn:aws:iam::aws:policy/AmazonEC2FullAccess`
