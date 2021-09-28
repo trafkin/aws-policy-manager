@@ -37,7 +37,7 @@ def catching_empty_lists(userList,roleList,groupList):
 
 def main_program(user_value):
     """This function handles the call of get_entities, detach_policy_per_entity and attach_policy_per_entity upon the user's option"""
-    if option_value == 1:
+    if option_value == 1 and list_if_empty(catching_empty_lists(userList=users_call,roleList=roles_call,groupList=groups_call)) == 1:
         return initial_response(p_arn=policyArnfromUser,users=users_call,roles=roles_call,groups=groups_call)
     if option_value == 2 and list_if_empty(catching_empty_lists(userList=users_call,roleList=roles_call,groupList=groups_call)) == 1:
         return detach_policy_per_entity(p_arn=policyArnfromUser,users=users_call,roles=roles_call,groups=groups_call), initial_response(p_arn=policyArnfromUser,users=users_call,roles=roles_call,groups=groups_call),print(f'{bcolors.OKBLUE}{bcolors.BOLD} If you want to make sure the process finished succesfully, run the script again and select option 1\n It should display an empty list.{bcolors.WHITE}{bcolors.ENDC}')
